@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid div1">
+    <div class="container-lg " >
+    <div class="container" id="cvform" >
+    <h1 class="text-center " style="text-transform: uppercase; font-weight: 900;">Resume Builder</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <form id="resumeForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label" style="font-weight: 600;">Name</label >
+                    <input type="text" class="form-control" placeholder="enter here" id="name" required>
+                </div>
+        
+                <div class="mb-3">
+                    <label for="email" class="form-label" style="font-weight: 600;">Email</label>
+                    <input type="email" class="form-control" id="email" required placeholder="enter here">
+                </div>
+                <div class="mb-3" >
+                    <label for="phone" class="form-label" style="font-weight: 600;">Contact</label>
+                    <input type="tel" class="form-control" id="contact" required placeholder="enter here">
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label" style="font-weight: 600;">Address</label>
+                    <input type="tel" class="form-control" id="Address" required placeholder="enter here">
+                </div>
+
+                <div class="mb-3" id="education">
+                    <label for="education" class="form-label" style="font-weight: 600;">Education</label>
+                    <textarea class="form-control edufield" id="education" rows="3" placeholder="enter here" textglow></textarea>
+                    <div class="container text-center" id="edubutton">
+                        <button onclick="addnewedu()" type="button" class="btn btn-primary my-2 hoverglow" id="addExperience">Add More Education</button>           
+                           </div>
+                </div>
+                <div class="mb-3" id="workExperience">
+                    <label for="experience" class="form-label" style="font-weight: 600;">Work-Experience</label>
+                    <textarea class="form-control workfield" id="experience" rows="3" placeholder="enter here"></textarea>
+                    <div class="container text-center" id="weaddbutton">
+<button onclick="addNewwork()" type="button" class="btn btn-primary my-2 hoverglow" id="addExperience">Add More Experience</button>
+                    </div>
+                      
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label" style="font-weight: 600;">Importants Link</label>
+                    <div class="mb-3 my-3">
+                        <label for="phone" class="form-label" style="font-weight: 600;">Linkdin</label>
+                        <input type="tel" class="form-control" id="Linkdin" required placeholder="enter here">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label" style="font-weight: 600;">Github</label>
+                            <input type="tel" class="form-control" id="g" required placeholder="enter here">  </div>
+                          
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label" style="font-weight: 600;">Certificate-License</label>
+                                    <input type="tel" class="form-control" id="Certificate-License" required placeholder="enter here"> </div>
+
+                </div>
+               
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form id="resumeForm">
+                <!-- Add this where you want the user to upload their DP, e.g., above the name input -->
+                <div class="mb-3">
+                    <label for="dpUpload" class="form-label" style="font-weight: 600;">Upload Profile Photo</label>
+                    <input type="file" class="form-control" id="dpUpload" accept="image/*">
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label" style="font-weight: 600;">Profile-Summary</label>
+                    <input type="text" class="form-control" placeholder="enter here" id="Profile-Summary" required>
+                </div>
+                <div class="mb-3" id="tech">
+                    <label for="experience" class="form-label" style="font-weight: 600;">Technical Skill</label>
+                    <textarea class="form-control techskill" id="Technical Skill" rows="3" placeholder="enter here"></textarea>
+                    <div class="container text-center" id="techbutton">
+                        <button onclick="addskill()" type="button" class="btn btn-primary my-2 hoverglow" id="addExperience">Add More
+                            skills</button>
+                    </div>
+                
+                </div>
+                <div class="mb-3" id="acheive">
+                    <label for="experience" class="form-label" style="font-weight: 600;">Acheivement</label>
+                    <textarea class="form-control acheivearea" id="Acheivement" rows="3" placeholder="enter here"></textarea>
+                    <div class="container text-center" id="acheivebutton">
+                        <button onclick="addacheive()" type="button" class="btn btn-primary my-2 hoverglow" id="addacheive1">Add More
+                            acheive</button>
+                    </div>
+                
+                </div>
+                <div class="mb-3" id="act">
+                    <label for="experience" class="form-label" style="font-weight: 600;">Extracurricullar Activities</label>
+                    <textarea class="form-control actskill" id="Extracurricullar Activities" rows="3" placeholder="enter here"></textarea>
+                    <div class="container text-center" id="actbutton">
+                        <button onclick="actskill()" type="button" class="btn btn-primary my-2 hoverglow" id="addExperience">Add More
+                            activities</button>
+                    </div>
+                
+                </div>
+                <div class="mb-3" id="lang">
+                    <label for="experience" class="form-label" style="font-weight: 600;">language</label>
+                    <textarea class="form-control langskill" id="language" rows="3"
+                        placeholder="enter here"></textarea>
+                    <div class="container text-center" id="langbutton">
+                        <button onclick="actlang()" type="button" class="btn btn-primary my-2 hoverglow" id="addlang">Add More
+                            language</button>
+                    </div>
+                
+                </div>
+                <div class="mb-3" id="reference">
+                    <label for="reference" class="form-label" style="font-weight: 600; text-transform: uppercase;">References</label>
+                    <textarea class="form-control referencefield" id="referenceInput" rows="3" placeholder="enter here"></textarea>
+                    <div class="container text-center" id="refbutton">
+                        <button onclick="addReference()" type="button" class="btn btn-primary my-2 hoverglow" id="addReferenceBtn">Add
+                            More Reference</button>
+                    </div>          </div>
+                
+            </form>
+ 
+              
+              
+        </div>
+        <div class="container text-center my-2">
+        <button onclick="generatecv()"  class="btn btn-primary cv">Generate Resume</button>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+<div class="container " id="cvtemplate">
+<div class="row">
+<div class="col-md-4  text-center mr-5 " style="background-color: aqua;">
+ 
+ 
+ 
+<!-- Change your img tag in the template to have id="profileImg" -->
+<img id="profileImg"
+    src="https://static.vecteezy.com/system/resources/previews/036/280/651/original/default-avatar-profile-icon-social-media-user-image-gray-avatar-icon-blank-profile-silhouette-illustration-vector.jpg"
+    alt="dp" class="img-fluid rounded-circle mb-3" style="width: 150px; height: 150px;">
+ 
+ <div class="container-fluid text-center">
+    <p id="namet1" >kishor king laddo</p>
+    
+    <p id="contactt2">  <img src="phone.png" style="width: 3opx; height: 30px;">+91 9878067568</p>
+       <p id="emailt3"> <img src="email.png" style="width: 3opx; height: 30px;"> siey6e8c@gmal.com</p>
+    <p id="adresst3"> <img src="home.png" style="width: 3opx; height: 30px;"> bihar bihiya 802152</p>
+    <hr style="background-color: black; width: 100%; height: 2px;">
+    <p>
+        
+        <a id="gtt" href="https://www.linkedin.com/in/kishor-king-laddo-4b0b1a1b2/" target="_blank" class="px-3"><img src="github.png" alt="github" style="width: 30px; height: 30px;"></a> 
+        <a id="linkdt" href="https://www.instagram.com/kishorkingladdo/" target="_blank"><img src="linkdin.png" alt="github" style="width: 30px; height: 30px;"></a> 
+        <a id="c" href="#" target="_blank" class="px-3" > <img src="certificate.png" alt="certificate" style="width: 30px; height: 30px;" ></a>
+    </p>
+    <h2 style="text-align: left; font-weight: 800; text-transform: uppercase; font-size: larger;">Acheivement</h2>
+    <ol id="acheivet" style="text-align: left; list-style-type: disc;" class="list-group ">
+        <li> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+        <li> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+    </ol>
+    <h2 style="text-align: left; font-weight: 800; text-transform: uppercase; font-size: larger;" class="pt-3">technical skills</h2>
+    <ol id="techt" style="text-align: left; list-style-type: disc;" class="list-group ">
+        <li> Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+        <li> Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+        <li> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </li>
+    </ol>
+    <h2 style="text-align: left; font-weight: 800; text-transform: uppercase; font-size: larger;" class="pt-3">language</h2>
+    <ol id="langt" style="text-align: left; list-style-type: disc;" class="list-group ">
+       
+       
+    </ol>
+    
+ </div>
+</div>
+<div class="col-md-8 text-center py-1">
+    
+    <div class="card ">
+        <div class="card-header" style="background-color:aqua;">
+            <h2 style="text-align: left;">Profile Summary</h2>
+          </div>
+          <div class="card-body">
+            <p id="profiltet"></p>
+</div>
+ 
+</div>
+<div class="card my-5">
+    <div class="card-header" style="background-color:aqua;">
+        <h2 style="text-align: left;">Education</h2>
+    </div>
+    <div class="card-body">
+        <p id="edut" >Profile summary content goes here. This section can include a brief overview of skills, experience, and
+            career goals.</p>
+    </div>
+
+</div>
+<div class="card my-5">
+    <div class="card-header" style="background-color:aqua;">
+        <h2 style="text-align: left;">Activities</h2>
+    </div>
+    <div class="card-body">
+        <p id="actt" >Education content goes here. This section can include details about degrees, institutions, and graduation
+            dates.</p>
+    </div>
+  
+</div>
+<div class="card my-5">
+    <div class="card-header" style="background-color:aqua;">
+        <h2 style="text-align: left;">References</h2>
+    </div>
+    <div class="card-body">
+        <ol id="reft" style="text-align: left; list-style-type: disc;" class="list-group"></ol>
+    </div>
+</div>
+
+</div>
+</div>
+<div class="container text-center my-4">
+    <button onclick="printCV()" class="btn btn-success no-print">Print CV as PDF</button>
+</div>
+</div>
+<!-- Add this button where you want the print option to appear -->
+ 
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

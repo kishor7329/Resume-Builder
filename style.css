@@ -1,0 +1,45 @@
+/* #cvform{
+    display: none;
+} */
+  
+ .hoverglow:hover{
+    box-shadow: 0 0 15px 5px rgba(0, 123, 255);
+ }
+ .textglow{
+    text-shadow: 0 0 5px rgba(0, 123, 255), 0 0 10px rgba(0, 123, 255), 0 0 15px rgba(0, 123, 255);
+ }
+ #profiltet {
+     text-align: left;
+ }
+ .cv:hover{
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 123, 255);
+ }
+ #reft {
+     text-align: left;
+     list-style-type: disc;
+     padding-left: 40px;
+     /* or 20px for a bit more */
+     margin-left: 0;
+ }
+ @media print {
+     .no-print {
+         display: none !important;
+     } }
+         .div1{
+             background-image: url('background.jpg');
+             background-size: cover;
+             /* Ensures the image covers the whole container */
+             background-repeat: no-repeat;
+             /* Prevents tiling */
+             background-position: center;
+             /* Centers the image */
+             
+             /* Makes sure it covers the full viewport height */ 
+            margin: 0;
+        padding: 0;  }
+             
+        #cvtemplate{
+            display: none;
+        }
